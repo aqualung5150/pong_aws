@@ -1,0 +1,234 @@
+.mainBox {
+  display: flex;
+  width: 1050px;
+  height: 800px;
+  padding: 30px;
+  border-radius: 20px;
+  flex-direction: row;
+  background-color: white;
+}
+
+.profileInner {
+  flex: 1;
+  padding: 10px;
+  padding-left: 10px;
+  padding-top: 50px;
+}
+
+.logInner {
+  flex: 2;
+  padding: 10px;
+  background-color: lightgray;
+  border-radius: 20px;
+  overflow: auto;
+}
+
+.profileImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.imageBox {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.circleLogout {
+  position: absolute;
+  top: 115px;
+  left: 115px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  border: 1px solid white;
+  background-color: red;
+}
+
+.circleLogin {
+  position: absolute;
+  top: 115px;
+  left: 115px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  border: 1px solid white;
+  background-color: green;
+}
+
+.circleMine {
+  position: absolute;
+  top: 115px;
+  left: 115px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  border: 1px solid white;
+  background-color: skyblue;
+}
+
+.wlsBanner {
+  color: #808080;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row; /* 버튼들을 세로로 배치 */
+  gap: 10px; /* 버튼 간격 */
+  padding: 10px;
+}
+
+.buttons button {
+  padding: 8px 8px;
+  width: 150px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.followButton {
+  background: #4193ef;
+  color: white;
+}
+.followingButton {
+  background: #454545;
+  color: white;
+}
+.gameButton {
+  background: #58bf91;
+  color: white;
+}
+.disabled {
+  background: #525252;
+  color: rgb(121, 121, 121);
+}
+.blockButton {
+  background: #ea4d58;
+  color: white;
+}
+.unblockButton {
+  background: #8961ef;
+  color: white;
+}
+.fontSet {
+  font-weight: bold;
+  font-family: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.logBanner {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.logBox {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+  width: 600px;
+  height: 75px;
+  border-radius: 20px;
+  background: #445069;
+  color: white;
+}
+
+.logTime {
+  width: 200px;
+  height: 50px;
+  font-size: 15px;
+  margin-top: 7px;
+  text-align: center;
+  justify-content: center;
+}
+
+.logName {
+  width: 150px;
+  height: 50px;
+  margin-top: 15px;
+  font-size: 15px;
+  text-align: center;
+  justify-content: center;
+}
+.logProfileImage {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+.resultFont {
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  margin-top: 7px;
+  text-align: center;
+  justify-content: center;
+}
+
+.gameButtons {
+  display: flex;
+  flex-direction: column; /* 버튼들을 세로로 배치 */
+  gap: 10px; /* 버튼 간격 */
+  padding: 10px;
+  align-items: middle;
+  text-align: center;
+}
+
+.gameButtons button {
+  padding: 8px 8px;
+  width: 120px;
+  height: 35px;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #4b8dc3;
+  color: white;
+}
+
+/* ///////////////////////////////////// */
+
+/* ysungwon */
+
+.buttons_middle {
+  display: flex;
+  flex-direction: row; /* 버튼들을 세로로 배치 */
+  gap: 5px; /* 버튼 간격 */
+  padding: 5px;
+}
+
+.buttons_middle button {
+  padding: 4px 4px;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+.small_div {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

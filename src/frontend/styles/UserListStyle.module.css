@@ -1,0 +1,181 @@
+.profileMainBox {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 850px;
+  height: 950px;
+  overflow: auto;
+  background: #f9f9f9;
+  align-items: middle;
+}
+
+.profileBox {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 780px;
+  height: 200px;
+  background: #f9f9f9;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.nameBox {
+  flex-direction: row;
+  display: flex;
+}
+
+.circleLogout {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 7px;
+  border: 1px solid white;
+  background-color: red;
+}
+
+.circleLogin {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 7px;
+  border: 1px solid white;
+  background-color: green;
+}
+
+.circleMine {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 7px;
+  border: 1px solid white;
+  background-color: skyblue;
+}
+
+.profileImageBox {
+  flex: 0.7;
+  padding: 10px;
+  width: 170px;
+  height: 170px;
+  border: 0px solid;
+}
+
+.profileImage {
+  width: 160px;
+  height: 160px;
+  border-radius: 20px;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.profileInfo {
+  flex: 2.3;
+  font-size: 25px;
+  margin-bottom: 3px;
+  font-family: "Pretendard";
+  font-style: normal;
+}
+
+.profileInfo h2 {
+  font-size: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row; /* 버튼들을 세로로 배치 */
+  gap: 15px; /* 버튼 간격 */
+}
+
+.buttons button {
+  padding: 8px 8px;
+  width: 160px;
+  height: 55px;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.listButtons button {
+  padding: 8px 8px;
+  width: 140px;
+  height: 35px;
+  border: none;
+  font-size: 20px;
+  padding-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.followIn {
+  background: #4193ef;
+  color: white;
+}
+
+.normalIn {
+  background: #58bf91;
+  color: white;
+}
+
+.unfollowIn {
+  background: #454545;
+  color: white;
+}
+
+.disabled {
+  background: #525252;
+  color: rgb(121, 121, 121);
+}
+
+.gameButtons {
+  display: flex;
+  flex-direction: row; /* 버튼들을 세로로 배치 */
+  gap: 8px; /* 버튼 간격 */
+  align-items: middle;
+  text-align: center;
+}
+
+.gameButtons button {
+  padding: 8px 8px;
+  width: 120px;
+  height: 35px;
+  border: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #4b8dc3;
+  color: white;
+}
+
+/* ////////////ysungwon///////////// */
+.buttons_middle {
+  display: flex;
+  flex-direction: row; /* 버튼들을 세로로 배치 */
+  gap: 5px; /* 버튼 간격 */
+  padding: 5px;
+}
+
+.buttons_middle button {
+  padding: 4px 4px;
+  width: 80px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Pretendard, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+.small_div {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
