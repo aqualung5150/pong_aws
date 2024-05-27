@@ -90,7 +90,7 @@ function UserList({ setIsOpenModal }: { setIsOpenModal: any }) {
     localStorage.removeItem("access_token_exp");
     localStorage.removeItem("avatar");
     sessionStorage.removeItem("gamesocket");
-    const ApiUrl = "http://localhost:80/api/auth/logout";
+    const ApiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/logout`;
     axiosApi.post(ApiUrl, {}).catch((error: any) => {
       console.log("logout send fail: ", error); //TODO: error handling check
     });
@@ -157,7 +157,7 @@ function UserList({ setIsOpenModal }: { setIsOpenModal: any }) {
     let idList: string[] = [];
     //const responseFriend = await (await fetch_refresh ('http://localhost/api/user/' + userId + '/friend')).json();
     const responseData = await axiosApi.get(
-      "http://localhost:80/api/user/" + userId + "/friend"
+      `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${userId}/friend`
     );
     const responseFriend = responseData.data;
     const friendCount = responseFriend.friendList.length;
@@ -166,7 +166,7 @@ function UserList({ setIsOpenModal }: { setIsOpenModal: any }) {
     }
     setFriendList(idList);
     console.log("friend response: ", idList);
-    const responseUserData = await axiosApi.get("http://localhost:80/api/user");
+    const responseUserData = await axiosApi.get(`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user`);
     const response = responseUserData.data;
     const useridx = response.length;
 
@@ -176,11 +176,11 @@ function UserList({ setIsOpenModal }: { setIsOpenModal: any }) {
     for (let i = 0; i < useridx; i++) {
       if (response[i].id != 0) {
         const responseDetail = await axiosApi.get(
-          "http://localhost:80/api/user/" + response[i].id
+          `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${response[i].id}`
         );
         const detailResponse = responseDetail.data;
         const responseMatch = await axiosApi.get(
-          "http://localhost:80/api/user/" + response[i].id + "/matchhistory"
+          `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${response[i].id}/matchhistory`
         );
         const matchResponse = responseMatch.data;
         const matchCount = matchResponse.length;
@@ -283,7 +283,7 @@ function UserList({ setIsOpenModal }: { setIsOpenModal: any }) {
   }
 
   async function follow(index: number) {
-    const apiUrl = "http://localhost:80/api/user/" + userId + "/friend";
+    const apiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${userId}/friend`;
     const dataToUpdate = {
       isAdd: true,
       friend: Number(userData[index].id),
@@ -310,7 +310,7 @@ function UserList({ setIsOpenModal }: { setIsOpenModal: any }) {
       });
   }
   async function unFollow(index: number) {
-    const apiUrl = "http://localhost:80/api/user/" + userId + "/friend";
+    const apiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${userId}/friend`;
     const dataToUpdate = {
       isAdd: false,
       friend: Number(userData[index].id),

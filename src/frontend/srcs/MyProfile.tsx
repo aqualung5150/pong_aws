@@ -72,7 +72,7 @@ function MyProfile({
           localStorage.removeItem("access_token_exp");
           localStorage.removeItem("avatar");
           sessionStorage.removeItem("gamesocket");
-          const ApiUrl = "http://localhost:80/api/auth/logout";
+          const ApiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/logout`;
           axiosApi.post(ApiUrl, {}).catch((error:any) => {
             console.log("logout send fail: ", error); //TODO: error handling check
           });
@@ -83,7 +83,7 @@ function MyProfile({
   async function refreshToken() : Promise<any> {
     console.log("토큰 재발급");
     await axios.get(
-      'http://localhost:80/api/auth/refresh',
+      `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/refresh`,
       { withCredentials: true }
       ).then((response)=>{
         const resData = response.data;
@@ -94,7 +94,7 @@ function MyProfile({
         // if (!jwtDecode2.exp)
         //   console.log('hi3')
         // localStorage.setItem("access_token_exp", jwtDecode2.exp.toString());
-        setQRUrl("http://localhost:80/api/2fa/qrcode");
+        setQRUrl(`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/2fa/qrcode`);
       })
       .catch((error:any) => {
               console.log("Axios Error type : ");
@@ -112,7 +112,7 @@ function MyProfile({
 			if (jwtExpInt * 1000 - Date.now() < 2000)
 				refreshToken();
       else
-        setQRUrl("http://localhost:80/api/2fa/qrcode");
+        setQRUrl(`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/2fa/qrcode`);
 		}
     else{
       logout("로그인 정보가 맞지않습니다 다시 로그인해주세요.");
@@ -128,7 +128,7 @@ function MyProfile({
   };
 
   async function fixProfile() {
-    const apiUrl = "http://localhost:80/api/user/" + userId;
+    const apiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${userId}`;
 
     if (newNickname !== "" && newNickname !== userNickname) {
       if (newNickname.length >= 12) {
@@ -207,7 +207,7 @@ function MyProfile({
           if (verCode == '' || verCode.length !== 6){
             throw("인증코드를 확인해주세요");
           }
-          const faChangeApiUrl = 'http://localhost:80/api/2fa/turn-on';
+          const faChangeApiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/2fa/turn-on`;
           const dataToUpdate = {
             id: userId,
             twoFactorAuthCode: verCode
@@ -239,7 +239,7 @@ function MyProfile({
               localStorage.removeItem("access_token_exp");
               localStorage.removeItem("avatar");
               sessionStorage.removeItem("gamesocket");
-              const ApiUrl = "http://localhost:80/api/auth/logout";
+              const ApiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/logout`;
               axiosApi.post(ApiUrl, {}).catch((error:any) => {
                 console.log("logout send fail: ", error); //TODO: error handling check
               });
@@ -265,7 +265,7 @@ function MyProfile({
         if (verCode == '' || verCode.length !== 6){
           throw("인증코드를 확인해주세요");
         }
-        const faChangeApiUrl = 'http://localhost:80/api/2fa/turn-off';
+        const faChangeApiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/2fa/turn-off`;
         const dataToUpdate = {
           id: userId,
           twoFactorAuthCode: verCode

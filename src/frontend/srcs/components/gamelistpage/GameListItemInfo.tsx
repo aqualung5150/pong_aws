@@ -30,7 +30,7 @@ export default function GameListItemInfo({
           <li>
             <div className="gamelist-avatar left">
               <img
-                src={`http://localhost:80/api/user/${game?.fromId}/photo`}
+                src={`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${game?.fromId}/photo`}
                 width="35"
                 height="35"
                 alt="avataricon"
@@ -51,7 +51,7 @@ export default function GameListItemInfo({
             </div>
             <div className="gamelist-avatar right">
               <img
-                src={`http://localhost:80/api/user/${game?.toId}/photo`}
+                src={`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${game?.toId}/photo`}
                 width="35"
                 height="35"
                 alt="avataricon"
@@ -62,7 +62,7 @@ export default function GameListItemInfo({
           <li>
             <div className="gamelist-avatar left">
               <img
-                src={`http://localhost:80/api/user/${game?.fromId}/photo`}
+                src={`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${game?.fromId}/photo`}
                 width="35"
                 height="35"
                 alt="avataricon"
@@ -76,7 +76,7 @@ export default function GameListItemInfo({
             </div>
             <div className="gamelist-avatar right">
               <img
-                src={`http://localhost:80/api/user/${game?.toId}/photo`}
+                src={`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${game?.toId}/photo`}
                 width="35"
                 height="35"
                 alt="avataricon"

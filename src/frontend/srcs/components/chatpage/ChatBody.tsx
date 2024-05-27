@@ -83,7 +83,7 @@ const ChatBody = ({
           >
             <div className="message-recipient-avatar">
               <img
-                src={`http://localhost:80/api/user/${message?.fromId}/photo?timestamp=${imgURL}`}
+                src={`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${message?.fromId}/photo?timestamp=${imgURL}`}
                 width="35"
                 height="35"
                 alt="usericon"

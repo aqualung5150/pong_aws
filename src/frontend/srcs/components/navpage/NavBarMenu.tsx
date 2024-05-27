@@ -76,7 +76,7 @@ export default function Menu({
     localStorage.removeItem("access_token_exp");
     localStorage.removeItem("avatar");
     sessionStorage.removeItem("gamesocket");
-    const ApiUrl = "http://localhost:80/api/auth/logout";
+    const ApiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/logout`;
     axiosApi.post(ApiUrl, {}).catch((error) => {});
     setIsLoggedIn(false);
     alert("로그아웃 되었습니다.");

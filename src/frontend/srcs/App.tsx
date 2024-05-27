@@ -157,7 +157,7 @@ export default function App() {
 
   useEffect(() => {
     const getSocket = (namespace: string, jwt: string, nickname: string) => {
-      return io.connect(`http://localhost:80/${namespace}`, {
+      return io.connect(`http://${process.env.NEXT_PUBLIC_BASE_URL}/${namespace}`, {
         query: { nickname: nickname },
         auth: { token: jwt },
         transports: ["websocket"]

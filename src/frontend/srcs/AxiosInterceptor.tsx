@@ -7,7 +7,7 @@ import Router from "next/router";
 async function refreshToken(): Promise<any> {
   console.log("in refresh");
   const res = await axios
-    .get("http://localhost:80/api/auth/refresh", { withCredentials: true })
+    .get(`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/refresh`, { withCredentials: true })
     .then((res) => {
       const access_token = res.data.access_token;
       localStorage.setItem("access_token", access_token);
@@ -47,7 +47,7 @@ export async function getLogout(): Promise<any> {
 }
 
 const axiosApi = axios.create({
-  baseURL: "http://localhost:80/api", //default url to call
+  baseURL: `http://${process.env.NEXT_PUBLIC_BASE_URL}/api`, //default url to call
   headers: { "Content-type": "application/json" }, //in case of img?
 });
 

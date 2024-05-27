@@ -91,7 +91,7 @@ function UserProfile({ id, setIsOpenModal }: { id: any; setIsOpenModal: any }) {
     localStorage.removeItem("access_token_exp");
     localStorage.removeItem("avatar");
     sessionStorage.removeItem("gamesocket");
-    const ApiUrl = "http://localhost:80/api/auth/logout";
+    const ApiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/logout`;
     axiosApi.post(ApiUrl, {}).catch((error: any) => {
       console.log("logout send fail: ", error); //TODO: error handling check
     });
@@ -145,7 +145,7 @@ function UserProfile({ id, setIsOpenModal }: { id: any; setIsOpenModal: any }) {
     let idList: string[] = [];
     //const responseFriend = await (await fetch_refresh ('http://localhost/api/user/' + userId + '/friend')).json();
     const responseData = await axiosApi.get(
-      "http://localhost:80/api/user/" + userId + "/friend"
+      `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${userId}/friend`
     );
     const responseFriend = responseData.data;
     const friendCount = responseFriend.friendList.length;
@@ -156,11 +156,11 @@ function UserProfile({ id, setIsOpenModal }: { id: any; setIsOpenModal: any }) {
 
     const newDataList: userDataInterface[] = [];
     const responseDetail = await axiosApi.get(
-      "http://localhost:80/api/user/" + id
+      `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${id}`
     );
     const detailResponse = responseDetail.data;
     const responseMatch = await axiosApi.get(
-      "http://localhost:80/api/user/" + id + "/matchhistory"
+      `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${id}/matchhistory`
     );
     const matchResponse = responseMatch.data;
     const matchCount = matchResponse.length;
@@ -232,7 +232,7 @@ function UserProfile({ id, setIsOpenModal }: { id: any; setIsOpenModal: any }) {
   }
 
   async function follow(index: number) {
-    const apiUrl = "http://localhost:80/api/user/" + userId + "/friend";
+    const apiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${userId}/friend`;
     const dataToUpdate = {
       isAdd: true,
       friend: Number(userData[0].id),
@@ -259,7 +259,7 @@ function UserProfile({ id, setIsOpenModal }: { id: any; setIsOpenModal: any }) {
       });
   }
   async function unFollow(index: number) {
-    const apiUrl = "http://localhost:80/api/user/" + userId + "/friend";
+    const apiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${userId}/friend`;
     const dataToUpdate = {
       isAdd: false,
       friend: userData[0].id,

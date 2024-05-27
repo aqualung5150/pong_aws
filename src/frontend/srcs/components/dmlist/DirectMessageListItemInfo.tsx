@@ -52,7 +52,7 @@ export default function DirectMessageListItemInfo({
         <li onClick={() => handleAccept(event)} className="gameAccept">
           <div className="dmlist-avatar left">
             <img
-              src={`http://localhost:80/api/user/${messageInfo?.[1]?.data?.fromId}/photo`}
+              src={`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${messageInfo?.[1]?.data?.fromId}/photo`}
               width="35"
               height="35"
               alt="avataricon"

@@ -29,7 +29,7 @@ useEffect( () => {
   const authLogin = async () => {
     setIsReady(false);
     const response = await fetch(
-      "http://localhost:80/api/auth/login?code=" + code
+      `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/auth/login?code=${code}`
     );
     // const response = await(await fetch('http://localhost/api/auth/login?code=' + code)).json();
 
@@ -53,7 +53,7 @@ useEffect( () => {
     setUserId(data.id);
     if (data.is2faEnabled === false) {
       const detailResponse = await (
-        await fetch("http://localhost:80/api/user/" + data.id)
+        await fetch(`http://${process.env.NEXT_PUBLIC_BASE_URL}/api/user/${data.id}`)
       ).json();
       localStorage.setItem("access_token", data.access_token);
       // Decode token to get expired time
@@ -92,7 +92,7 @@ useEffect( () => {
       alert("OTP 코드를 다시 확인해주세요");
       return;
     }
-    const apiUrl = "http://localhost:80/api/2fa/authenticate";
+    const apiUrl = `http://${process.env.NEXT_PUBLIC_BASE_URL}/api/2fa/authenticate`;
     const dataToUpdate = {
       // 업데이트하고자 하는 데이터 객체
       id: userId,
